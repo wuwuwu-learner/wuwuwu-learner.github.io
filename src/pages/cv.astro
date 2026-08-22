@@ -3,90 +3,115 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<BaseLayout title="科研简历" sideBarActiveItemID="cv">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <div class="text-3xl w-full font-bold">个人简介</div>
   </div>
 
   <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    北京理工大学机械工程博士研究生（预计 2027 年毕业）。研究方向包括机构学、机器人学、空天器动力学与智能结构，聚焦仿生机构设计、变体结构、机器人运动控制，以及面向工程应用的多学科建模、仿真与样机验证。
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+    <div class="text-3xl w-full font-bold">教育经历</div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+      title="北京理工大学 · 机械工程 · 博士"
+      subtitle="2023.09–2027.06（预计）"
     />
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+      title="北京理工大学 · 机械工程 · 硕士"
+      subtitle="2020.09–2023.06"
+    />
+    <TimeLineElement
+      title="北京交通大学 · 机械工程 · 学士"
+      subtitle="2016.09–2020.06"
     />
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold">科研成果</div>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="学术论文"
+      subtitle="第一作者一区 Top SCI 论文 2 篇、在投 1 篇、一作 EI 论文 1 篇"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <ol class="list-decimal space-y-2 pl-5">
+        <li><strong>Wu X, et al.</strong> Bio-inspired design and performance evaluation of a novel morphing nose cone for aerospace vehicles[J]. Aerospace Science and Technology, 2023.</li>
+        <li><strong>Wu X, et al.</strong> Morphing nose cone with integrated deformation-locking design for aerospace vehicle inspired by honeybee abdomen[J]. Aerospace Science and Technology, 2025.</li>
+        <li><strong>Wu X, et al.</strong> Bio-inspired Multistage Morphing Nose Cone with Aero-Mechanical Co-Optimization and Experimental Demonstration[J]. 2026.（在投）</li>
+        <li><strong>吴祥兵，赵杰亮.</strong> 非圆截面变体头锥机构设计与运动仿真分析[J]. 宇航学报，2021.</li>
+      </ol>
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="知识产权"
+      subtitle="申请国家发明专利 7 项，授权 6 项；登记软件著作权 1 项，授权实用新型专利 1 项"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <ol class="list-decimal space-y-2 pl-5">
+        <li>一种多级驱动的连杆式头锥变体机构，专利号 CN202010773903.9（发明授权）
+        <li>一种绳索驱动的可折展伞状天线，专利号 CN202110366005.6（发明授权）
+        <li>一种双向反向自锁的随动伸缩杆，专利号 CN202310859841.7（发明申请）
+        <li>材料结构表界面一体化设计软件，登记号 2024SR0219944（软著）
+        <li>一种基于气体化学反应驱动的水浮柔性抓手装置，专利号 CN202222356338.3（实用新型授权）
+        <li>一种用于飞行器变体头锥的可变形换热管路，专利号 CN202310859840.2（发明授权）
+        <li>一种可伸缩刚柔耦合蒙皮机构，专利号 CN202310859848.9（发明授权）
+        <li>一种飞行器头锥尖端变直径骨架绳驱机构，专利号 CN202410258569.1（发明授权）
+        <li>基于形状记忆合金弹簧的飞行器头锥弯曲变形驱动装置，专利号 CN202410258570.4（发明授权）
+      </ol>
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="学术交流"
+      subtitle="国内外会议口头报告 3 次、海报展示 2 次"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <ol class="list-decimal space-y-2 pl-5">
+        <li>受蜜蜂腹部启发的空天飞行器变体头锥仿生设计，中国智能材料与结构系统大会 SMSS，2023。（口头报告）
+        <li>Design of a Serial-Parallel Morphing Nose Cone for Aerospace Vehicles, IYCBSE, 2026。（口头报告）
+        <li>Bionic Design of Morphing Nose Cone for Aerospace Vehicle, IOCB, 2024。（口头报告）
+      </ol>
     </TimeLineElement>
   </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
+  <section class="mb-10">
+    <div class="mb-5"><div class="text-3xl w-full font-bold">专业技能</div></div>
+    <ul class="list-square space-y-2 pl-6 leading-7">
+      <li>机构开发：<strong>串并联机构、可展机构、机构拓扑综合</strong>、性能评价、多体动力学建模、多目标参数优化</li>
+      <li>机器人学：<strong>运动学与动力学建模、机器人系统设计、运动控制</strong>、状态估计、感知融合、自主决策</li>
+      <li>人工智能：<strong>机器学习回归、代理模型建模</strong>、高斯过程回归、梯度提升树、<strong>PyTorch 框架</strong></li>
+      <li>编程仿真：熟练掌握 <strong>Python、C++、Mathematica、Matlab</strong>，具备算法实现与自动化仿真能力</li>
+      <li>软件应用：熟练使用 <strong>SolidWorks、CAD、ADAMS、ANSYS、Fluent</strong> 等软件</li>
+    </ul>
+  </section>
 
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-  </ul>
+  <section class="mb-10">
+    <div class="mb-5"><div class="text-3xl w-full font-bold">竞赛奖励</div></div>
+    <ol class="list-decimal space-y-3 pl-5">
+      <li><div class="grid gap-1 md:grid-cols-[minmax(0,1fr)_5rem_5rem_8rem]"><strong>全国大学生机器人大赛 ROBOCON（二等奖）</strong><span>2019</span><span>国家级</span><span class="font-semibold">机械组负责人</span></div></li>
+      <li><div class="grid gap-1 md:grid-cols-[minmax(0,1fr)_5rem_5rem_8rem]"><strong>全国大学生创新创业年会（全校仅一、获评双奖）</strong><span>2019</span><span>国家级</span><span class="font-semibold">负责人</span></div></li>
+      <li><div class="grid gap-1 md:grid-cols-[minmax(0,1fr)_5rem_5rem_8rem]"><span>“挑战杯”首都大学生学术科技作品竞赛（三等奖）</span><span>2019</span><span>省部级</span><span>负责人</span></div></li>
+      <li><div class="grid gap-1 md:grid-cols-[minmax(0,1fr)_5rem_5rem_8rem]"><span>中国国际“互联网+”大学生创新创业大赛（铜奖）</span><span>2022</span><span>国家级</span><span></span></div></li>
+      <li><div class="grid gap-1 md:grid-cols-[minmax(0,1fr)_5rem_5rem_8rem]"><span>北京大学生创新创业大赛（一等奖）</span><span>2025</span><span>省部级</span><span></span></div></li>
+    </ol>
+  </section>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
+  <section class="mb-10">
+    <div class="mb-5"><div class="text-3xl w-full font-bold">荣誉奖励</div></div>
+    <ul class="list-disc space-y-2 pl-5">
+      <li><strong>2025 年 北京市自然科学二等奖（学生第一）</strong></li>
+      <li><strong>2020 年 北京市优秀毕业生</strong></li>
+      <li>2022 年 北京理工大学一等学业奖学金</li>
+      <li>2019 年 创新训练优秀作品奖学金、越博动力奖学金</li>
+    </ul>
+  </section>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-  </ul>
+  <section>
+    <div class="mb-5"><div class="text-3xl w-full font-bold">自我评价</div></div>
+    <div class="space-y-3">
+      <div><strong>学习抗压能力强：</strong>中羽 4 级，精通自由泳、蛙泳、仰泳</div>
+      <div><strong>沟通协调能力强：</strong>国际仿生工程学会学生分会主席</div>
+    </div>
+  </section>
 </BaseLayout>

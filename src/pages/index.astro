@@ -1,78 +1,50 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
+  <div class="mt-5 mb-10">
+    <div class="text-xl py-1"></div>
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div class="text-5xl font-bold">吴祥兵</div>
+      <div class="text-2xl font-semibold sm:mb-1">博士 · 机械工程</div>
+    </div>
+    <div class="mt-5">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        研究方向：机构学、机器人学、飞行器动力学、智能结构
       </text>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+  </div>
+
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-3">个人简介</h2>
+    <p class="text-lg leading-8">
+      <strong>北京理工大学机械工程博士研究生</strong>（预计 2027 年毕业）。研究方向包括<strong>机构学、机器人学、飞行器动力学与智能结构</strong>，聚焦<strong>仿生机构设计、变体结构、机器人运动控制、多体动力学、机电一体化</strong>，以及面向工程应用的多学科建模、仿真与样机验证。
+    </p>
+    <p class="text-lg leading-8 mt-4">
+      作为<strong>第一技术负责人</strong>参与<strong>国家重点研发计划、国家173计划重点、国自然面上、水利部重大科技</strong>等项目，完成从机构方案设计、原理样机研制到测试验证的多环节工作。曾作为<strong>项目负责人代表学校参加全国大学生创新创业年会（全校仅一）</strong>。曾作为<strong>机械组组长参加全国大学生机器人Robocon大赛，并荣获全国二等奖</strong>，具备机器人机构设计、样机研发、系统调试和项目工程落地能力。
+    </p>
+    <p class="text-lg leading-8 mt-4">
+      目前已以<strong>第一作者</strong>身份发表<strong>一区 Top SCI 论文 2 篇、EI 论文 1 篇</strong>；申请<strong>国家发明专利 7 项，其中授权 6 项</strong>。
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-4">教育经历</h2>
+    <div class="time-line-container grid gap-4">
+      <TimeLineElement title="北京理工大学 · 机械工程 · 博士" subtitle="2023.09–2027.06（预计）" />
+      <TimeLineElement title="北京理工大学 · 机械工程 · 硕士" subtitle="2020.09–2023.06" />
+      <TimeLineElement title="北京交通大学 · 机械工程 · 学士" subtitle="2016.09–2020.06" />
     </div>
-  </div>
+  </section>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
+  <section class="mb-5">
+    <h2 class="text-3xl w-full font-bold">代表项目</h2>
+  </section>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  {projects.map((project) => <ProjectCard project={project} />)}
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
 </BaseLayout>

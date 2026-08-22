@@ -1,0 +1,23 @@
+---
+import type { Project } from "../data/projects";
+
+const { project } = Astro.props as { project: Project };
+---
+
+<article class="border border-base-300 rounded-box p-5 mb-5 bg-base-100 transition hover:border-primary hover:shadow-md">
+  <a href={`/projects/${project.slug}`} class="flex gap-5">
+    <img src={project.image} alt={`${project.title} 项目图片`} class="hidden sm:block h-40 w-52 shrink-0 rounded-box border border-base-300 bg-base-100 object-contain" />
+    <div class="min-w-0 flex-1">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <h2 class="text-xl font-bold text-primary leading-snug">{project.title}</h2>
+        <span class="shrink-0 font-bold text-secondary">{project.role}</span>
+      </div>
+      <div class="mt-3 text-sm opacity-70 flex flex-col gap-1 sm:flex-row sm:justify-between">
+        <span>项目类型：{project.category}</span>
+        <span class="shrink-0">{project.period}</span>
+      </div>
+      <p class="mt-4 leading-7"><span class="font-bold">项目简介：</span>{project.summary}</p>
+      <div class="mt-4 text-sm font-semibold text-primary">查看具体工作 →</div>
+    </div>
+  </a>
+</article>

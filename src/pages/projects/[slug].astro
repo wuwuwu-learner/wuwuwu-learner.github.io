@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { projects, type Project } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props as { project: Project };
+---
+
+<BaseLayout title={project.title} sideBarActiveItemID="projects">
+  <a href="/projects" class="text-sm font-semibold text-primary">← 返回项目经历</a>
+  <article class="mt-5">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+      <h1 class="text-3xl font-bold leading-tight">{project.title}</h1>
+      <span class="shrink-0 font-bold text-secondary">{project.role}</span>
+    </div>
+    <div class="mt-5 rounded-box bg-base-200 p-5">
+      <div class="font-semibold">项目类型</div><div class="mt-1">{project.category}</div>
+      <div class="mt-4 font-semibold">项目时间</div><div class="mt-1">{project.period}</div>
+    </div>
+    <section class="mt-8"><h2 class="text-2xl font-bold">项目简介</h2><p class="mt-3 leading-8">{project.summary}</p></section>
+    <section class="mt-8"><h2 class="text-2xl font-bold">具体工作</h2><ol class="mt-4 list-decimal space-y-4 pl-6 leading-8">{project.details.map((detail) => <li>{detail}</li>)}</ol></section>
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-4">项目图片</h2>
+      {project.featuredDetailImage && (
+        <img src={project.featuredDetailImage} alt={`${project.title} 项目概念图`} class="mb-5 w-full max-h-[34rem] rounded-box border border-base-300 object-contain" />
+      )}
+      <div class="grid items-center gap-5 md:grid-cols-2">
+        {(project.detailImages ?? (project.featuredDetailImage ? [] : [project.image])).map((image, index) => (
+          <img src={image} alt={`${project.title} 项目图片 ${index + 1}`} class="h-80 w-full rounded-box border border-base-300 object-contain" />
+        ))}
+      </div>
+    </section>
+  </article>
+</BaseLayout>
